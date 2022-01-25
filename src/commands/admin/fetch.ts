@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+import { MessageEmbed } from "discord.js"
 const db = require('../../database/db')
 const axios = require('axios')
 const config = require('../../config.json')
@@ -55,7 +55,7 @@ module.exports = {
     
                     db.query(sql)
     
-                    const newMapEmbed = new Discord.MessageEmbed()
+                    const newMapEmbed = new MessageEmbed()
                     .setTitle(`New Map by ${mapAuthor}`)
                     .setURL(mapDL)
                     .setDescription('Counter-Strike: Source')

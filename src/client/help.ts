@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+import { MessageEmbed } from "discord.js";
 const config = require('../../config.json')
 module.exports = {
     commands: ['help', 'h'],
@@ -6,7 +6,7 @@ module.exports = {
         // Ensure the initial command message gets deleted
     
         message.delete()
-        const helpEmbed = new Discord.MessageEmbed()
+        const helpEmbed = new MessageEmbed()
         .setTitle('Quickstart Guide / FAQ')
         .setDescription('(Admin Only)')
         .setColor(config.colors.secondary)
@@ -32,7 +32,9 @@ module.exports = {
                 value: 'The bot is currently set to `1 check / 15min`'
             }
         ])
-        .setFooter('Issues/Problems? Contact khenzy#9999')
+        .setFooter({
+            text: 'Issues/Problems? Contact khenzy#9999'
+        });
 
         message.channel.send({ embed: helpEmbed })
     }

@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+import { MessageEmbed } from "discord.js"
 const db = require('../../database/db')
 const config = require('../../config.json')
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
 
             db.query(sql)
         
-            const removeChannel = new Discord.MessageEmbed() 
+            const removeChannel = new MessageEmbed() 
             .setTitle('Success ✅')
             .setDescription('Removed channel connection')
             .setColor(config.colors.secondary)
